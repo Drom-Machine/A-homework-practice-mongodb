@@ -1,15 +1,42 @@
-1. spin up a brand new project using express generator called homework-practice-mongodb(express name-of-project --view=ejs)
-2. delete public and views folder
-3. npm uninstall ejs
-4. also delete the lines that tell the application to use the view engine, view and the static file (reference today's project app.js)
-5. npm i mongoose
-6. create a new folder called recipe in the routes folder
-7. inside the recipe folder create a file call recipe.js and make sure you require it in app.js
-8. inside the recipe folder create controller and model folder
-9. in the controller folder create a file called recipeController
-10. in the model folder create a filed called Recipe.js
-11. in Recipe.js create a model with the key RecipeName
-12. in the recipeController bring in the Recipe model and create a function called getAllRecipe
-13. use the getAllRecipe function in recipeRouter.js the function show get all the recipes
-14. in recipeController create a function called createRecipe the function should create a recipe and make sure it is saved to the monogd
-15. submit github url link in essay. Don't forget to .gitignore node_modules
+readme.md
+Mongo Express Node suggestion-box-hw
+
+Use Postman and Robo 3T to test your routes Use MongoDB and Mongoose and name database suggestion-hw Use Async and Await (Don't forget the try and catch block) Use controllers for business logic. Remember to be inside folder and npm i* Only .gitignore the node_modules
+
+INSTRUCTIONS:
+
+Create an express server using express-generator: express suggestion-box-hw --view=ejs
+
+Delete all view related items
+
+Connect to mongodb with mongoose. Remember to name database suggestion-hw.
+
+In routes folder create a suggestions folder, then create suggestionRouter.js inside suggestion folder and make sure you connect it through app.js with the path '/api/suggestions'
+
+In suggestion folder, create model folder and controller folder.
+
+In model folder, create a file called Suggestion.js: Build a schema for Suggestions called SuggestionSchema
+
+title - should be a string, lowercase, unique, required
+author - should be a string, lowercase
+suggestion - should be a string, lowercase and required
+likes - should be a number and default to 0
+anonymous - should be a boolean
+timeCreated - should be a date with default Date.now
+In controller folder, create a file called suggestionController.js
+getAllSuggestions
+getSingleSuggestion - get one suggestion based on id using parameters
+createSuggestion- does not need id or time from user
+updateSuggestion- user can only update title and suggestion
+deleteSuggestion - suggestion deletes based on id
+Hook it up to suggestionRouter.js
+GET /all-suggestions
+GET /single-suggestion
+POST /create-suggestion
+UPDATE /update-suggestion
+DELETE /delete-suggestion
+Extra Credit- - Make a GET /by-author-suggestion using query - getSuggestionsByAuthor- if i query a author's name i should get a list of their suggestions
+
+Hint: in url www.shop.com/products/?item=shoes in code req.query.item equals shoes
+
+Submit Github Link in Essay
